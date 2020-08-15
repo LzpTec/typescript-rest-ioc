@@ -8,6 +8,14 @@ npm install typescript-ioc --save
 npm install typescript-rest-ioc --save
 ```
 
+From github:
+
+```bash
+npm install https://github.com/LzpTec/typescript-rest.git --save
+npm install https://github.com/LzpTec/typescript-ioc.git --save
+npm install https://github.com/LzpTec/typescript-rest-ioc.git --save
+```
+
 Then add a rest.config file in the root of your project:
 
 ```json

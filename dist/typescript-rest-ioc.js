@@ -1,25 +1,24 @@
-import * as debug from 'debug';
-import { Container } from 'typescript-ioc';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const debug = require("debug");
+const typescript_ioc_1 = require("typescript-ioc");
 const serverDebugger = debug('typescript-rest-ioc');
-
-export default {
-    create: (serviceClass: any) => {
-        return Container.get(serviceClass);
+exports.default = {
+    create: (serviceClass) => {
+        return typescript_ioc_1.Container.get(serviceClass);
     },
-
-    getTargetClass: (serviceClass: Function) => {
+    getTargetClass: (serviceClass) => {
         if (Array.isArray(serviceClass)) {
             return null;
         }
-        let typeConstructor: any = serviceClass;
+        let typeConstructor = serviceClass;
         if (typeConstructor['name'] && typeConstructor['name'] !== 'ioc_wrapper') {
-            return typeConstructor as FunctionConstructor;
+            return typeConstructor;
         }
         typeConstructor = typeConstructor['__parent'];
         while (typeConstructor) {
             if (typeConstructor['name'] && typeConstructor['name'] !== 'ioc_wrapper') {
-                return typeConstructor as FunctionConstructor;
+                return typeConstructor;
             }
             typeConstructor = typeConstructor['__parent'];
         }
@@ -27,3 +26,4 @@ export default {
         throw new TypeError('Can not identify the base Type for requested target');
     }
 };
+//# sourceMappingURL=typescript-rest-ioc.js.map
