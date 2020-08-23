@@ -7,7 +7,7 @@
     "start": "tsc -w",
     "build": "npm run clean && tsc",
     "clean": "rimraf dist",
-    "prepare": "rimraf dist && tsc",
+    "prepublish": "rimraf dist && tsc",
     "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
     "lint:fix": "tslint --fix ./src/**/*.ts ./test/**/*.ts -t verbose",
     "pretest": "npm run build && npm run lint",
