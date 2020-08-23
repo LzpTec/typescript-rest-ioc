@@ -1,6 +1,6 @@
 {
   "name": "typescript-rest-ioc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Typescript-Rest Service Factory to integrate it wit typescript-ioc.",
   "author": "Thiago da Rosa de Bustamante <trbustamante@gmail.com>",
   "scripts": {
