@@ -1,13 +1,14 @@
 {
   "name": "typescript-rest-ioc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Typescript-Rest Service Factory to integrate it wit typescript-ioc.",
   "author": "Thiago da Rosa de Bustamante <trbustamante@gmail.com>",
   "scripts": {
     "start": "tsc -w",
-    "build": "npm run clean && tsc",
+    "build": "tsc",
     "clean": "rimraf dist",
-    "prepublish": "rimraf dist && tsc",
+    "prebuild": "npm run clean",
+    "prepare": "npm run build",
     "lint": "tslint ./src/**/*.ts ./test/**/*.ts",
     "lint:fix": "tslint --fix ./src/**/*.ts ./test/**/*.ts -t verbose",
     "pretest": "npm run build && npm run lint",
@@ -17,23 +18,21 @@
   "devDependencies": {
     "@types/debug": "^4.1.5",
     "@types/jest": "^26.0.10",
-    "@types/node": "^14.0.27",
+    "@types/node": "^15.3.0",
     "codecov": "^3.7.2",
     "jest": "^26.4.0",
     "rimraf": "^3.0.2",
     "source-map-support": "^0.5.19",
     "ts-jest": "^26.2.0",
-    "ts-loader": "^8.0.2",
-    "ts-node": "^8.10.2",
+    "ts-loader": "^9.1.2",
+    "ts-node": "^9.1.1",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.7",
-    "typescript-ioc": "^3.2.2",
-    "typescript-rest": "^3.0.1"
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "typescript-ioc": "^3.0.2",
-    "typescript-rest": "^3.0.0"
+    "typescript-ioc": "github:LzpTec/typescript-ioc",
+    "typescript-rest": "github:LzpTec/typescript-rest"
   },
   "keywords": [
     "typescript-rest",
